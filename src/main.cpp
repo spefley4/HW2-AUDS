@@ -16,7 +16,7 @@ class AUDS {
 		AUDS(const AUDS &other) {
 			ourData = new T[initialSize];
 			if (other.ourData){
-				for (int i=0; i < maxSize; ++i){
+				for (int i=0; i <= currentSize; ++i){
 					ourData[i] = other.ourData[i];	
 				}
 			}
@@ -31,10 +31,15 @@ class AUDS {
 			delete[] ourData;
 		}
 		int size(){
-			//Returns the current number of objects
+			return ourData.size()
+                        }
 		}
 		void push(T x){
-			//Adds a generic element to the data structure	
+			for (i=0; i <= currentSize; ++i){
+				if (!ourData[i]){
+					ourData[i] = x;	
+				}
+			}	
 		}
 	private:
 		int initialSize;;

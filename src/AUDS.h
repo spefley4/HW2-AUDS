@@ -25,19 +25,24 @@ class AUDS {
 			}
 		}
 		//Copy Operator
-		AUDS& operator=(AUDS other);
+		AUDS& operator=(AUDS other) {
+			
+		}
 		// Destructor
 		~AUDS() {
 			delete[] ourData;
 		}
+		// Returns number of elements in array
 		int size(){
 			return ourData.size()
                         }
 		}
+		// Pushes a new element of any data type onto the end of the array
 		void push(T x){
 			for (i=0; i <= currentSize; ++i){
 				if (!ourData[i]){
 					ourData[i] = x;	
+					break;
 				}
 			}	
 		}

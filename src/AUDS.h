@@ -65,8 +65,9 @@ class AUDS {
 		int maxSize;
 		T* ourData;
 		
-		// Checks to make sure currentSize is less than maxSize;
-		bool checkSize(AUDS x) {
+		// Checks to make sure currentSize is less than maxSize
+		// If not, increases the size of the array by 50% 
+		void checkSize(AUDS x) {
 			if(currentSize >= maxSize) {
 				maxSize *= 1.5;
 			}

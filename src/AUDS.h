@@ -47,15 +47,29 @@ class AUDS {
 		void push(T x){
 			for (i=0; i <= currentSize; ++i){
 				if (!ourData[i]){
-					ourData[i] = x;	
+					ourData[i] = x;
+					currentSize++;
+					checkSize();	
 					break;
 				}
 			}	
+		}
+
+		// Pops random element from list
+		T pop() {
+			currentSize--;
 		}
 	private:
 		int initialSize;;
 		int currentSize;
 		int maxSize;
 		T* ourData;
+		
+		// Checks to make sure currentSize is less than maxSize;
+		bool checkSize(AUDS x) {
+			if(currentSize >= maxSize) {
+				maxSize *= 1.5;
+			}
+		}
 
 };

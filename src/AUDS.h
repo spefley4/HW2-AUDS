@@ -10,11 +10,15 @@ class AUDS {
 			initialSize = 100;
 			currentSize = 0;
 			maxSize = 100;
-			ourData = new T[initSize];
+			ourData = new T[initialSize];
 		}
 		//Deep Copy Constructor
 		AUDS(const AUDS &other) {
-			ourData = new T[initialSize];
+			initialSize = other.initialSize;
+			currentSize = other.currentSize;
+			maxSize = other.maxSize;
+			ourData = other.ourData;
+			
 			if (other.ourData){
 				for (int i=0; i <= currentSize; ++i){
 					ourData[i] = other.ourData[i];	
@@ -26,7 +30,9 @@ class AUDS {
 		}
 		//Copy Operator
 		AUDS& operator=(AUDS other) {
-			
+			std::swap(initialSize, other.initialSize);
+			std::swap(currentSize, other.currentSize);
+			std::swap(maxSize, other.maxSize);		
 		}
 		// Destructor
 		~AUDS() {

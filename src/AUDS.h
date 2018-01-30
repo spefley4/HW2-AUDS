@@ -45,22 +45,33 @@ class AUDS {
 		}
 		// Pushes a new element of any data type onto the end of the array
 		void push(T x){
-			for (i=0; i <= currentSize; ++i){
+			for (int i=0; i <= currentSize; ++i){
 				if (!ourData[i]){
 					ourData[i] = x;
 					currentSize++;
 					checkSize();	
 					break;
 				}
+			//Test Print Statement
+			//std::cout << ourData[i] << std::endl;
 			}	
 		}
 
 		// Pops random element from list
 		T pop() {
-			currentSize--;
+			T tmp;
+			for (int i=0; i < currentSize; i++){
+				//Change to be a random element 
+				if ( i = 3 ) {
+					tmp = ourData[i];
+					ourData[i] = null*;
+					currentSize--;
+				}
+			}
+			return tmp;
 		}
 	private:
-		int initialSize;;
+		int initialSize;
 		int currentSize;
 		int maxSize;
 		T* ourData;
